@@ -3,7 +3,6 @@ import WorkoutCard from "@/components/homepage/WorkoutCard"
 export default async function WorkoutLibrary() {
     const res = await fetch("https://api.abcz.workers.dev/api/fitlog")
     const workouts: Workout[] = await res.json()
-
     return (
         <section id="library" className="mx-auto w-full max-w-[1232px] mt-15">
             <h2 className="font-[family-name:var(--font-oswald)] text-[30px] font-bold text-white tracking-[-.75px]">
