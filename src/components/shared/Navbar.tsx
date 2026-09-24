@@ -1,10 +1,12 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import {usePathname} from "next/navigation"
 import logo from "@/assets/logo.png"
-
 export default function Navbar() {
+    const pathname = usePathname()
     return (
-        <nav className="h-[81px] w-full">
+        <nav className="h-[80px] w-full border-b border-[#1C1F26]">
             <div className="mx-auto flex h-full max-w-[1280px] items-center px-8">
                 <Link href="/" className="flex cursor-pointer items-center gap-2">
                     <Image src={logo} alt="FitLog" width={28} height={28} className="h-7 w-7" />
@@ -12,10 +14,9 @@ export default function Navbar() {
                 </Link>
 
                 <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1">
-                    <Link href="/" className="cursor-pointer rounded-xl bg-[#1A2312] px-3 py-1 text-[12px] font-medium leading-5 text-[#C2F800]">Workouts</Link>
-                    <Link href="/my-plan" className="cursor-pointer rounded-md px-3 py-1 text-[12px] font-medium leading-5 text-white">My Plan</Link>
+                    <Link href="/" className={`cursor-pointer rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>Workouts</Link>
+                    <Link href="/my-plan" className={`cursor-pointer rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>My Plan</Link>
                 </div>
-
                 <div className="ml-auto flex items-center">
                     <Link href="/my-plan" className="flex cursor-pointer items-center gap-2">
                         <span className="text-[12px] font-medium leading-4 text-[#D1D5DB]">Plan</span>

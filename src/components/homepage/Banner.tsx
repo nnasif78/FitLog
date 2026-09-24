@@ -3,11 +3,11 @@ import logo from "@/assets/banner.png"
 
 export default function Banner() {
     return (
-        <section className="mx-auto flex h-[448px] w-full max-w-[1232px] items-center justify-between rounded-2xl bg-[#15171D] px-16">
+        <section className="mx-auto flex h-[448px] w-full max-w-[1232px] items-center justify-between rounded-3xl bg-[#15171D] px-16 mt-15">
             <div>
                 <p className="font-[family-name:var(--font-inter)] text-[11px] font-bold leading-[16.5px] tracking-[1.1px] text-[#C2F800]">WORKOUT LIBRARY</p>
 
-                <h1 className="mt-3 font-[family-name:var(--font-oswald)] text-[60px] font-extrabold leading-[1] tracking-[-2px] text-white">
+                <h1 className="mt-3 font-[family-name:var(--font-oswald)] text-[60px] font-extrabold leading-[1] tracking-[-1.5px] text-white">
                     TRAIN WITH INTENT. LOG
                     <br/>
                     EVERY SET.
