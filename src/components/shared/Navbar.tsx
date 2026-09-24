@@ -8,7 +8,7 @@ export default function Navbar() {
             <div className="mx-auto flex h-full max-w-[1280px] items-center px-8">
                 <Link href="/" className="flex cursor-pointer items-center gap-2">
                     <Image src={logo} alt="FitLog" width={28} height={28} className="h-7 w-7" />
-                    <span className="font-[var(--font-oswald)] text-[18px] font-black leading-7 tracking-[0.9px] text-white">FITLOG</span>
+                    <span className="font-[family-name:var(--font-oswald)] text-[18px] font-black leading-7 tracking-[0.9px] text-white">FITLOG</span>
                 </Link>
 
                 <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1">
