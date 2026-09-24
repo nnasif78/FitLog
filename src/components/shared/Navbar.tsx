@@ -3,7 +3,10 @@ import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from "next/navigation"
 import logo from "@/assets/logo.png"
+import { useFitLog } from "@/context/FitLogContext"
+
 export default function Navbar() {
+    const { plan, saved } = useFitLog()
     const pathname = usePathname()
     return (
         <nav className="h-[80px] w-full border-b border-[#1C1F26]">
@@ -19,11 +22,11 @@ export default function Navbar() {
                 <div className="ml-auto flex items-center">
                     <Link href="/my-plan" className="flex cursor-pointer items-center gap-2">
                         <span className="text-[12px] font-medium leading-4 text-[#D1D5DB]">Plan</span>
-                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#C2F800] text-[11px] font-bold leading-4 text-black">0</span>
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#C2F800] text-[11px] font-bold leading-4 text-black">{plan.length}</span>
                     </Link>
                     <Link href="/my-plan" className="ml-5 flex cursor-pointer items-center gap-2">
                         <span className="text-[12px] font-medium leading-4 text-[#9CA3AF]">Saved</span>
-                        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[#2D313B] text-[11px] font-medium leading-4 text-[#D1D5DB]">0</span>
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[#2D313B] text-[11px] font-medium leading-4 text-[#D1D5DB]">{saved.length}</span>
                     </Link>
                 </div>
             </div>
