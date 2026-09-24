@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${oswald.variable} min-h-screen bg-[#0A0A0A] text-white`}>{children}</body>
+      <body className={`${inter.variable} ${oswald.variable} min-h-screen bg-[#0C0D10] text-white`}>{children}</body>
     </html>
   );
 }
