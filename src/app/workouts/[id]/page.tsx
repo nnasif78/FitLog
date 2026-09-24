@@ -10,7 +10,6 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
     const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
     if (!res.ok) notFound()
     const workout: Workout = await res.json()
-
     return (
         <>
             <Navbar />

@@ -16,7 +16,7 @@ export default async function WorkoutLibrary() {
 
             <div className="mt-8 grid w-full grid-cols-1 justify-items-center gap-6 min-[860px]:grid-cols-2 min-[1280px]:grid-cols-3">
                 {workouts.map((workout) => (
-                    <div key={workout.id} className="w-full max-w-[394px] min-w-0">
+                    <div key={workout.id} className="cursor-pointer h-[368px] w-full overflow-hidden rounded-3xl bg-[#222630]">
                         <WorkoutCard workout={workout} />
                     </div>
                 ))}
