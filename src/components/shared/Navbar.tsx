@@ -9,13 +9,13 @@ export default function Navbar() {
     const { plan, saved } = useFitLog()
     const pathname = usePathname()
     return (
-        <nav className="h-[80px] w-full border-b border-[#1C1F26]">
+        <nav className="h-[80px] w-full border-b border-[#1C1F26] sticky top-0 bg-black/20 backdrop-blur-xl border border-white/10">
             <div className="mx-auto flex h-full max-w-[1280px] items-center px-8">
                 <Link href="/" className="flex cursor-pointer items-center gap-2">
                     <Image src={logo} alt="FitLog" width={28} height={28} className="h-7 w-7" />
                     <span className="font-[family-name:var(--font-oswald)] text-[18px] font-black leading-7 tracking-[0.9px] text-white">FITLOG</span>
                 </Link>
-                <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1">
+                <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 sm:flex">
                     <Link href="/" className={`cursor-pointer rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>Workouts</Link>
                     <Link href="/my-plan" className={`cursor-pointer rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>My Plan</Link>
                 </div>

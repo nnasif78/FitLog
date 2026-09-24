@@ -8,13 +8,13 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
     const { id } = await params
     const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
     const workout: Workout = await res.json()
-    
+
     return (
         <>
             <Navbar />
-            <main className="mx-auto max-w-[1232px] py-12">
-                <div className="grid grid-cols-2 gap-12">
-                    <Image src={workout.image} alt={workout.name} width={588} height={773} className="h-[773px] w-[588px] rounded-lg object-cover" />
+            <main className="mx-auto w-full max-w-[1232px] px-5 py-8 sm:px-8 sm:py-12 lg:px-0">
+                <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+                    <Image src={workout.image} alt={workout.name} width={588} height={773} className="h-auto max-h-[773px] w-full rounded-lg object-cover lg:h-[773px] lg:w-[588px]" />
                     <div>
                         <h1 className="font-[family-name:var(--font-oswald)] text-[36px] font-bold leading-[44px] text-white">{workout.name}</h1>
                         <p className="mt-4 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-6 text-[#9CA3AF]">{workout.description}</p>
