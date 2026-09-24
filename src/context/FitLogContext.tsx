@@ -1,7 +1,6 @@
 "use client"
 import { createContext, useContext, useState } from "react"
 import { Workout } from "@/types/workout.type"
-
 type FitLogContextType = {
     plan: Workout[]
     saved: Workout[]
@@ -11,7 +10,6 @@ type FitLogContextType = {
     removeSaved: (id: number) => void
 }
 const FitLogContext = createContext<FitLogContextType | null>(null)
-
 export function FitLogProvider({ children }: { children: React.ReactNode }) {
     const [plan, setPlan] = useState<Workout[]>([])
     const [saved, setSaved] = useState<Workout[]>([])

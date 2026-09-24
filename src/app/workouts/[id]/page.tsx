@@ -1,13 +1,14 @@
 import Image from "next/image"
 import Navbar from "@/components/shared/Navbar"
 import Footer from "@/components/shared/Footer"
+import WorkoutActions from "@/components/homepage/WorkoutActions"
 import { Workout } from "@/types/workout.type"
 
 export default async function WorkoutDetails({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
     const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
     const workout: Workout = await res.json()
-
+    
     return (
         <>
             <Navbar />
@@ -34,7 +35,7 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
                             ].map(([label, value], index) => (
                                 <div key={label} className={`flex h-[49px] items-center justify-between px-5 ${index !== 6 ? "border-b border-[#232834]" : ""}`}>
                                     <span className="font-[family-name:var(--font-inter)] text-[12px] font-bold leading-4 text-[#9CA3AF]">{label}</span>
-                                    <span className="font-[family-name:var(--font-inter)] text-[14px] font-medium leading-5 text-[E5E7EB]">{value}</span>
+                                    <span className="font-[family-name:var(--font-inter)] text-[14px] font-medium leading-5 text-[#E5E7EB]">{value}</span>
                                 </div>
                             ))}
                         </div>
@@ -47,10 +48,7 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
                                 </li>
                             ))}
                         </ol>
-                        <div className="flex items-center gap-3 mt-8">
-                            <button className="flex h-12 w-[220px] cursor-pointer items-center justify-center gap-2.5 rounded-xl bg-[#CCFF00] font-[family-name:var(--font-inter)] text-[14px] font-semibold text-[#0F1115] transition-opacity hover:opacity-90"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M10 16h4M12 14v4M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2h12Z" fill="none" stroke="currentColor" strokeWidth="2" /></svg><span>Add to today&apos;s plan</span></button>
-                            <button className="flex h-12 w-[180px] cursor-pointer items-center justify-center gap-2.5 rounded-xl border border-[#2A303C] font-[family-name:var(--font-inter)] text-[14px] font-medium text-white transition-colors hover:bg-white/5"><svg width="18" height="18" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z" fill="none" stroke="currentColor" strokeWidth="2" /></svg><span>Save for later</span></button>
-                        </div>
+                        <div className="mt-8"><WorkoutActions workout={workout} /></div>
                     </div>
                 </div>
             </main>
