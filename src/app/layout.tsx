@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className={`${inter.variable} ${oswald.variable} min-h-screen bg-[#0C0D10] text-white`}>
         <FitLogProvider>
           {children}
-          <ToastContainer />
+          <ToastContainer autoClose={3000} closeButton={false} hideProgressBar={true} pauseOnHover={false} pauseOnFocusLoss={false} />
         </FitLogProvider>
       </body>
     </html>
