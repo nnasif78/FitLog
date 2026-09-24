@@ -10,7 +10,6 @@ export default function Footer() {
                     <Image src={logo} alt="FitLog" width={24} height={24} className="h-6 w-6" />
                     <span className="font-[family-name:var(--font-oswald)] text-[16px] font-black leading-6 tracking-[0.8px] text-white">FITLOG</span>
                 </Link>
-
                 <p className="font-[family-name:var(--font-inter)] text-[12px] font-normal leading-4 text-[#6B7280]">
                     © 2026 FitLog — Workout Library. Train hard, log honest.
                 </p>
