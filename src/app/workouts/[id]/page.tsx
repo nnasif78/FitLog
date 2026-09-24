@@ -3,10 +3,12 @@ import Navbar from "@/components/shared/Navbar"
 import Footer from "@/components/shared/Footer"
 import WorkoutActions from "@/components/homepage/WorkoutActions"
 import { Workout } from "@/types/workout.type"
+import { notFound } from "next/navigation" 
 
 export default async function WorkoutDetails({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
     const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
+    if (!res.ok) notFound()
     const workout: Workout = await res.json()
 
     return (

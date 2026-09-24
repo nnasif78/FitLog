@@ -3,7 +3,7 @@ import logo from "@/assets/banner.png"
 
 export default function Banner() {
     return (
-        <section className="mx-auto mt-8 flex h-auto min-h-[448px] w-full max-w-[1232px] flex-col items-center justify-center gap-8 rounded-3xl bg-[#15171D] px-6 py-10 text-center sm:mt-10 sm:px-10 lg:mt-15 lg:h-[448px] lg:flex-row lg:justify-between lg:px-16 lg:py-0 lg:text-left">
+        <section className="mx-4 mt-8 flex h-auto min-h-[448px] w-auto max-w-[1232px] flex-col items-center justify-center gap-8 rounded-3xl bg-[#15171D] px-6 py-10 text-center sm:mx-6 sm:mt-10 sm:px-10 lg:mx-auto lg:mt-15 lg:h-[448px] lg:w-full lg:flex-row lg:justify-between lg:px-16 lg:py-0 lg:text-left">
             <div>
                 <p className="font-[family-name:var(--font-inter)] text-[11px] font-bold leading-[16.5px] tracking-[1.1px] text-[#C2F800]">WORKOUT LIBRARY</p>
                 <h1 className="mt-3 font-[family-name:var(--font-oswald)] text-[40px] font-extrabold leading-[1] tracking-[-1.5px] text-white sm:text-[48px] lg:text-[60px]">
@@ -16,7 +16,7 @@ export default function Banner() {
                     <br className="hidden sm:block" />
                     into today&apos;s plan, and watch the week&apos;s work add up.
                 </p>
-                <button className="mt-6 h-10 w-[180px] cursor-pointer rounded-md bg-[#C2F800] font-[family-name:var(--font-inter)] text-[12px] font-bold leading-4 tracking-[0.3px] text-black">BROWSE WORKOUTS</button>
+                <a href="#library" className="mt-6 flex h-10 w-[180px] cursor-pointer items-center justify-center mx-auto lg:mx-0 rounded-md bg-[#C2F800] font-[family-name:var(--font-inter)] text-[12px] font-bold leading-4 tracking-[0.3px] text-black">BROWSE WORKOUTS</a>
             </div>
             <Image src={logo} alt="FitLog workout" className="h-[240px] w-[240px] object-cover sm:h-[280px] sm:w-[280px] lg:h-[334px] lg:w-[334px]" />
         </section>

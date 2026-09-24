@@ -5,7 +5,7 @@ import Footer from "@/components/shared/Footer"
 export default function Home() {
   return (
     <>
-    <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+    <div className="flex min-h-screen w-full flex-col items-center">
     <Navbar/>
     <Banner />
     <WorkoutLibrary />
