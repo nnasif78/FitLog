@@ -220,7 +220,7 @@ If a workout does not exist, the user is redirected to the appropriate 404 page 
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/nnasif78/FitLog.git
 ```
 
 ### 2. Go to the project directory
