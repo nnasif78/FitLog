@@ -4,12 +4,21 @@ import Footer from "@/components/shared/Footer"
 import WorkoutActions from "@/components/homepage/WorkoutActions"
 import { Workout } from "@/types/workout.type"
 import { notFound } from "next/navigation"
+import { fetchJson } from "@/lib/api"
 
 export default async function WorkoutDetails({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
-    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
-    if (!res.ok) notFound()
-    const workout: Workout = await res.json()
+    let workout: Workout
+    try {
+        workout = await fetchJson<Workout>([
+            `https://api.abcz.workers.dev/api/fitlog/${id}`,
+            `https://api.api-store.workers.dev/api/fitlog/${id}`,
+        ])
+    } catch {
+        notFound()
+    }
+
+    if (!workout || typeof workout.name !== "string") notFound()
 
     return (
         <>

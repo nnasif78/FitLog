@@ -1,6 +1,6 @@
 export default function Loading() {
     return (
-        <section className="mx-auto mt-15 w-full max-w-[1232px] animate-pulse px-4 sm:px-8 lg:px-0">
+        <section className="mx-auto mt-15 w-full max-w-[1232px] animate-pulse px-4 sm:px-8 lg:px-0"><p className="mb-4 text-sm text-[#9CA3AF]">Loading workouts…</p>
             <div className="text-center min-[1280px]:text-left">
                 <div className="mx-auto h-9 w-44 rounded bg-white/10 backdrop-blur-xl min-[1280px]:mx-0"></div>
                 <div className="mx-auto mt-2 h-5 w-72 rounded bg-white/10 backdrop-blur-xl min-[1280px]:mx-0"></div>

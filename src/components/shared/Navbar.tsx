@@ -9,15 +9,15 @@ export default function Navbar() {
     const { plan, saved } = useFitLog()
     const pathname = usePathname()
     return (
-        <nav className="sticky top-0 h-[80px] w-full border border-white/10 border-b border-[#1C1F26] bg-black/20 backdrop-blur-xl">
-            <div className="mx-auto flex h-full max-w-[1280px] items-center px-8">
-                <Link href="/" className="flex cursor-pointer items-center gap-2">
+        <nav className="sticky top-0 z-50 h-[112px] w-full border-b border-[#1C1F26] bg-black/90 backdrop-blur-xl sm:h-[80px]">
+            <div className="relative mx-auto flex h-full max-w-[1280px] items-start px-4 pt-5 sm:items-center sm:px-8 sm:pt-0">
+                <Link href="/" className="flex items-center gap-2">
                     <Image src={logo} alt="FitLog" width={28} height={28} className="h-7 w-7" />
                     <span className="font-[family-name:var(--font-oswald)] text-[18px] font-black leading-7 tracking-[0.9px] text-white">FITLOG</span>
                 </Link>
-                <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 sm:flex">
-                    <Link href="/" className={`cursor-pointer rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>Workouts</Link>
-                    <Link href="/my-plan" className={`cursor-pointer rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>My Plan</Link>
+                <div className="absolute left-0 top-[72px] flex w-full items-center justify-center gap-1 border-t border-[#1C1F26] py-2 sm:left-1/2 sm:top-auto sm:w-auto sm:-translate-x-1/2 sm:border-0 sm:py-0">
+                    <Link href="/" className={`rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/" || pathname.startsWith("/workouts/") ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>Workouts</Link>
+                    <Link href="/my-plan" className={`rounded-xl px-3 py-1 text-[12px] font-medium leading-5 ${pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : "text-white"}`}>My Plan</Link>
                 </div>
                 <div className="ml-auto flex items-center">
                     <Link href="/my-plan" className="flex cursor-pointer items-center gap-2">
